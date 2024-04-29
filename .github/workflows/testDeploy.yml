@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script:
-            cd /var/www/test-site-opa
-            git pull
+            cd /var/www/test-site-opa && git pull
+            
             
 
