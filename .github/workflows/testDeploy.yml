@@ -2,6 +2,8 @@ name: Test Deploy
 
 on:
   push:
+    branches: ["main", "dev"]
+  pull_request:
     branches: ["main"]
 
 
@@ -23,12 +25,8 @@ jobs:
         run: cd ./cypress && npm ci
       - name: Run cypress
         run: npm run test
-          
-
-
-
+  
   deploy:
-    needs: cypress_tests
     runs-on:
       ubuntu-latest
     steps:
@@ -42,6 +40,7 @@ jobs:
           script: |
             cd /var/www/test-site-opa
             git pull
+            
             
             
 
