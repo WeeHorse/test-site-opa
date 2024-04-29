@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: /
+          script:
             cd /var/www/test-site-opa
             git pull
             
